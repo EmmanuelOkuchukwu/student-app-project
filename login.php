@@ -3,7 +3,6 @@
     include("databaseConfig.php");
     session_start();
     
-    
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         
@@ -60,6 +59,7 @@
             <ul>
                 <li><a href="register.php">Register</a></li>
                 <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="lecturerlogin.php">Lecturer Login</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
