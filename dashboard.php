@@ -47,11 +47,12 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="box">
-                            <table>
+                            <table cellspacing="5">
                               <tr>
                                 <th>Student id</th>
                                 <th>Email </th>
                                 <th>Rate score</th>
+                                <th>Comments on performance</th>
                               </tr>
                                 <?php foreach(groupMember($db, $group_no) as $student) {?>
                                   <tr>
