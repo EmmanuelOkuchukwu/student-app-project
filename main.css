@@ -20,7 +20,7 @@ body {
 }
 
 .heading {
-    padding: 10px 10px;
+    padding: 20px 10px;
     width: 100%;
     background-color: #cce5ff;
 }
@@ -127,4 +127,11 @@ footer p {
     color: white;
     text-align: center;
     text-transform: uppercase;
+}
+
+/*######################################################About Us Page###########################################################*/
+
+.about-maincontent {
+    height: 100px;
+    background-color: aquamarine;
 }
