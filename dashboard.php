@@ -58,7 +58,7 @@
                                   <tr>
                                     <td><?php echo $student['student_id'] ?></td>
                                     <td>
-                                      <a href="/student-app/student-rate.php/?student_id=<?php echo $student['student_id']
+                                      <a href="/student-app-project/student-rate.php/?student_id=<?php echo $student['student_id']
                                       ?>">
                                       <?php echo $student['email'] ?>
                                     </a></td>

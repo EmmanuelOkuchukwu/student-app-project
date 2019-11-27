@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <nav>
             <ul>
                 <li><a href="login.php">Login</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
