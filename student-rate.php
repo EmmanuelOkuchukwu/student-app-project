@@ -3,7 +3,7 @@ session_start();
 include("databaseConfig.php");
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-if (SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $student_id = $mysqli->real_escape_string($_POST['student_id']);
     $rate_student = $mysqli->real_escape_string($_POST['rate_student']);
     $comment = $mysqli->real_escape_string($_POST['comment']);
