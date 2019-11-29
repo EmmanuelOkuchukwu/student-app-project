@@ -47,7 +47,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="box">
-                            <table cellspacing="5">
+                            <table cellspacing="5" border="1">
                               <tr>
                                 <th>Student id</th>
                                 <th>Email </th>
@@ -62,6 +62,8 @@
                                       ?>">
                                       <?php echo $student['email'] ?>
                                     </a></td>
+                                    <td></td>
+                                    <td></td>
                                   </tr>
                                 <?php } ?>
                           </tr>
