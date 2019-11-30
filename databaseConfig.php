@@ -1,4 +1,6 @@
 <?php
+define("HOME_URL", "/student-app-project");
+
 if($_SERVER['HTTP_HOST'] == "localhost")
 {
     define('DB_SERVER', 'localhost');
