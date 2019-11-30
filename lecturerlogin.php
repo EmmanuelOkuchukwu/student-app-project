@@ -6,13 +6,29 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $techid = mysqli_real_escape_string($db,$_POST['teacher_id']);
         $passw = mysqli_real_escape_string($db,$_POST['password']);
+        
         $sql = "SELECT * FROM lecturer where teacher_id = '$techid' and password ='$passw'";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $active = $row['active'];
-
+        
         $email = $row["email"];
 
+        $count = mysqli_num_rows($result);
+
+        if ($count == 1) {
+            $_SESSION['email'] = $email;
+            ob_start();
+            header("location: lecturerDashboard.php");
+        }else {
+            
+            $erorr = "Your ID or password is invalid";
+        }
+
+        if (isset($error))
+        {
+            echo $error;
+        }
         
     }
 ?>
