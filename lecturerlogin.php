@@ -6,6 +6,14 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $techid = mysqli_real_escape_string($db,$_POST['teacher_id']);
         $passw = mysqli_real_escape_string($db,$_POST['password']);
+        $sql = "SELECT * FROM lecturer where teacher_id = '$techid' and password ='$passw'";
+        $result = mysqli_query($db,$sql);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $active = $row['active'];
+
+        $email = $row["email"];
+
+        
     }
 ?>
 
