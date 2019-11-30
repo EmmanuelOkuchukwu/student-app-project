@@ -74,6 +74,7 @@
                                 <th>Email </th>
                                 <th>Rate score</th>
                                 <th>Comments on performance</th>
+                                <th>Rater ID</th>
                               </tr>
                                 <?php foreach(groupMember($db, $group_no) as $student) {?>
                                   <tr>
@@ -98,6 +99,7 @@
                                     </td>
                                     <td><?php echo getRateScore($db, $student['student_id']); ?></td>
                                     <td><?php echo getComment($db, $student['student_id']); ?></td>
+                                    <td></td>
                                   </tr>
                                 <?php } ?>
                           </tr>
