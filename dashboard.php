@@ -1,6 +1,10 @@
 <?php
     include('session.php');
-  
+    if(isset($_SESSION['message']))
+    {
+      echo $_SESSION['message'];
+      unset($_SESSION["message"]);
+    }
     $group_no = $_SESSION["group_no"];
     
     function groupMember($db, $group_no)
@@ -10,6 +14,23 @@
         $result[] = $row;        
       }
       return $result;
+    }
+
+    function getRateScore($db, $student_id)
+    {
+        $query = mysqli_query($db,"select rate from rate_students where student_id = $student_id");
+        $row = mysqli_fetch_array($query);
+        if(isset($row['rate'])){
+            return $row['rate'];
+        }
+    }
+    function getComment($db, $student_id) 
+    {
+      $query = mysqli_query($db,"select comment from rate_students where student_id = $student_id");
+      $row = mysqli_fetch_array($query);
+      if(isset($row['comment'])){
+          return $row['comment'];
+      }
     }
 ?>
 <!DOCTYPE html>
@@ -47,7 +68,7 @@
                       <div class="row">
                         <div class="col-md-6">
                           <div class="box">
-                            <table cellspacing="5">
+                            <table cellspacing="5" border="1">
                               <tr>
                                 <th>Student id</th>
                                 <th>Email </th>
@@ -57,11 +78,26 @@
                                 <?php foreach(groupMember($db, $group_no) as $student) {?>
                                   <tr>
                                     <td><?php echo $student['student_id'] ?></td>
+                                      
+                                      
+                                       
+                                    
                                     <td>
-                                      <a href="/student-app-project/student-rate.php/?student_id=<?php echo $student['student_id']
-                                      ?>">
-                                      <?php echo $student['email'] ?>
-                                    </a></td>
+                                        
+
+                                      <?php 
+                                        if ($_SESSION["stuid"] == $student['student_id'])
+                                        {
+                                            echo $student['email'];
+                                        }
+                                        else{?>
+                                          <a href="student-rate.php/?student_id=<?php echo $student['student_id']?>">
+                                            <?php  echo $student['email']; ?>
+                                          </a>  
+                                        <?php }?>
+                                    </td>
+                                    <td><?php echo getRateScore($db, $student['student_id']); ?></td>
+                                    <td><?php echo getComment($db, $student['student_id']); ?></td>
                                   </tr>
                                 <?php } ?>
                           </tr>
