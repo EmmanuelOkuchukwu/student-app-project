@@ -32,6 +32,15 @@
           return $row['comment'];
       }
     }
+
+    function getRaterid($db, $student_id)
+    {
+      $query = mysqli_query($db, "select rater_id from rate_students where student_id = $student_id");
+      $row = mysqli_fetch_array($query);
+      if(isset($row['rater_id'])){
+        return $row['rater_id'];
+      }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -99,7 +108,7 @@
                                     </td>
                                     <td><?php echo getRateScore($db, $student['student_id']); ?></td>
                                     <td><?php echo getComment($db, $student['student_id']); ?></td>
-                                    <td></td>
+                                    <td><?php echo getRaterid($db, $student['student_id']);?></td>
                                   </tr>
                                 <?php } ?>
                           </tr>
