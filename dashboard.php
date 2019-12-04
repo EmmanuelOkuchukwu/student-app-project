@@ -63,7 +63,7 @@
       <h1>Welcome <?php echo $_SESSION["stuid"]; ?></h1> 
       <div class="col-md-12">
           <div class="row">
-              <div class="col-sm-3">
+              <div class="col-md-3">
                   <div class="left-content">
                       <img src="images/user_icon.jpg" width="100" height="100">
                       <hr>
@@ -71,7 +71,7 @@
                       <h2>Email: <?php echo $_SESSION['email']; ?></h2>
                   </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-md-9">
                   <div class="right-content">
                     <h2>Team Mates for group <?php echo $group_no?></h2><br/>
                       <div class="row">
@@ -84,6 +84,7 @@
                                 <th>Rate score</th>
                                 <th>Comments on performance</th>
                                 <th>Rater ID</th>
+                                <th>Delete</th>
                               </tr>
                                 <?php foreach(groupMember($db, $group_no) as $student) {?>
                                   <tr>
@@ -109,6 +110,7 @@
                                     <td><?php echo getRateScore($db, $student['student_id']); ?></td>
                                     <td><?php echo getComment($db, $student['student_id']); ?></td>
                                     <td><?php echo getRaterid($db, $student['student_id']);?></td>
+                                    <td><a href="#">Delete</a></td>
                                   </tr>
                                 <?php } ?>
                           </tr>
@@ -125,6 +127,20 @@
               </div>
           </div>
       </div>
+      <br>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="chan-password">
+              
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="email-section"></div>
+          </div>
+        </div>
+      </div>
+
 
       <footer>
           <p><b>Enter Footer details here</b></p>

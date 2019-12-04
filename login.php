@@ -53,7 +53,7 @@
     </head>
     <body>
         <div class="user-heading">
-            <h1><img src="images/HEIGRELHS.png" width="100" height="100">&nbsp;Login</h1>
+            <h1><img src="images/HEIGRELHS.png" width="170" height="100">&nbsp;Login</h1>
         </div>
         <!-- <nav>
             <ul>
@@ -84,6 +84,8 @@
                     <input type="password" placeholder="Password" name="password"><br><br>
                 </div>
                 <input class="button" type="submit" value="Login">
+                <label for="register"><b>Need to an account?</b></label>
+                <a href="register.php">Register here</a>
                 </div>
                 <hr>
             </div>

@@ -110,8 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <hr>
-                <label for="student_id"><b>Student ID</b></label>
+                <label for="student_id"><b>Student ID</b></label><br>
                 <input type="text" name="student_id"><br><br>
                 
                 <label for="email"><b>Email</b></label><br>
@@ -140,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <br><br>
                 
-                <input type="submit">
+                <input class="button" type="submit" value="Register">
                 <hr>
             </div>
         </div>
@@ -149,8 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             
 <footer>
-    <p>By emmanz95</p>
-    <p>All rights reserved</p>
+    <p>By emmanz95, All rights reserved</p>
 </footer>
     </body>
 </html>
