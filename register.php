@@ -15,7 +15,7 @@ function check_if_already_registered($db, $student_id)
     return false;
 }
 
-
+// 
 function has_max_group_reached($db, $group_no)
 {
     $query = mysqli_query($db,"select * from students where group_no = $group_no");
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <title>Register</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="newmain.css">
     </head>
     
     <body>
@@ -126,6 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="group_no"><b>Group Number</b></label>
                 
                 <!-- <input type="text" name="group_no"> -->
+                
 
                 <select name="group_no">
                     <option value="1">1</option>

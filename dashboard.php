@@ -47,7 +47,7 @@
    <head>
       <title>Welcome <?php echo $_SESSION["stuid"]; ?></title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="newmain.css">
    </head>
    <body>
      <div class="heading">

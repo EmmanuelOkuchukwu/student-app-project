@@ -50,7 +50,7 @@ function groupMemberHasBeenRatedbyMe($db, $student_id_to_be_rated, $rater_id)
     <head>
         <title>Rate Student</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="newmain.css">
     </head>
     <body>
         <div class="heading">

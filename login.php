@@ -49,48 +49,53 @@
         <title>Home</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="newmain.css">
     </head>
     <body>
-        <div class="heading">
-            <h1>Login</h1>
+        <div class="user-heading">
+            <h1><img src="images/HEIGRELHS.png" width="100" height="100">&nbsp;Login</h1>
         </div>
-        <nav>
+        <!-- <nav>
             <ul>
                 <li><a href="register.php">Register</a></li>
                 <li><a href="aboutus.php">About Us</a></li>
                 <li><a href="lecturerlogin.php">Lecturer Login</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-        </nav>
-<div class="row">            
+        </nav>        -->   
     <form action="login.php" method="POST">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3">
-                    <h1>Login</h1> 
-                    <hr>
-                    <label for="student_id"><b>Student ID</b></label>
-                    <input type="text" name="student_id">
-                    <br/>
-                    <br/>
-                    <label for="password"><b>Password</b></label><br>
-                    <input type="password" name="password"><br><br>
-                    <input type="submit">
-                    <hr>
+                <div class="login-box">
+                <h1>Login</h1> 
+                <div class="label">
+                    <label for="student_id"><b>Student ID</b></label><br>
                 </div>
+                <div class="textbox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" placeholder="Student ID" name="student_id">
+                </div>
+                <br/><br/>
+                <div class="label">
+                    <label for="password"><b>Password</b></label><br>
+                </div>
+                <div class="textbox">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" placeholder="Password" name="password"><br><br>
+                </div>
+                <input class="button" type="submit" value="Login">
+                </div>
+                <hr>
             </div>
         </div>
     </form>
-    <div class="container-left">
+    <!-- <div class="container-left">
 
-    </div>
-</div>
+    </div> -->
 
             
 <footer>
-    <p>By emmanz95</p>
-    <p>All rights reserved</p>
+    <p>By emmanz95, All rights reserved</p>
 </footer>
         
     </body>
