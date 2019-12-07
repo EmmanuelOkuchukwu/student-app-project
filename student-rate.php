@@ -1,56 +1,60 @@
-<?php
-session_start();
-include("databaseConfig.php");
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
-
-$student_id_to_be_rated = (int)$_GET['student_id'];
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $student_id = $student_id_to_be_rated;
-    $rate = $mysqli->real_escape_string($_POST['rate']);
-    $comment = $mysqli->real_escape_string($_POST['comment']);
-    $rater_id = $_SESSION['login_user']; // Loged user
-    
-
-    if(groupMemberHasBeenRatedbyMe($db, $student_id_to_be_rated, $rater_id))
-    {
-        $_SESSION['message'] ='Already Rated';
-        header("location:" .HOME_URL."/dashboard.php");
-    }
-    else{
-        
-        $sql = "INSERT INTO rate_students (student_id, rate, comment, rater_id)"
-                . "VALUES ('$student_id', '$rate', '$comment', '$rater_id')";
-                     
-        if ($mysqli->query($sql) === true) {
-            $_SESSION['message'] ='Feedback successfully submitted';
-            header("location:" .HOME_URL."/dashboard.php");
-        }
-        else {
-            $_SESSION['message'] = "Feedback could not be processed";
-        }
-    }
-}
-
-function groupMemberHasBeenRatedbyMe($db, $student_id_to_be_rated, $rater_id)
-{
-    // Search where 
-    $query = mysqli_query($db,"select * from rate_students where student_id = $student_id_to_be_rated AND rater_id = $rater_id");
-    if($query->num_rows == 1)
-    {
-        return true;
-    }
-    return false;
-}
-
-
+<?php 
+include('student-rate-backend.php');
 ?>
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+        body {
+    margin: 0;
+    background-color: green;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    /*height: 1000px;*/
+}
+
+    nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+li a {
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.heading {
+    padding: 20px 10px;
+    width: 100%;
+    background-color: #cce5ff;
+}
+
+.heading h1 {
+    text-align: left;
+    color: black;
+}
+</style>
         <title>Rate Student</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="newmain.css">
+      <!-- <link rel="stylesheet" href="newmain.css"> -->
     </head>
     <body>
         <div class="heading">
