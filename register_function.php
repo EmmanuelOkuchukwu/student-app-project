@@ -7,7 +7,7 @@ $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 function check_if_already_registered($db, $student_id)
 {
     $query = mysqli_query($db,"select student_id from students where student_id = $student_id ");
-    $row = mysqli_fetch_array($query,MYSQL_ASSOC);
+    $row = mysqli_fetch_array($query);
     if($row['student_id'] == $student_id)
     {
         return true;
@@ -19,7 +19,7 @@ function check_if_already_registered($db, $student_id)
 function has_max_group_reached($db, $group_no)
 {
     $query = mysqli_query($db,"select * from students where group_no = $group_no");
-    $row = mysqli_fetch_array($query,MYSQL_ASSOC);
+    $row = mysqli_fetch_array($query);
 
     
 
