@@ -9,15 +9,15 @@
     
     <body>
         <div class="heading">
-            <h1>Register</h1>
+        <h1><img src="images/HEIGRELHS.png" width="170" height="100">&nbsp;Student Peer Assessment</h1>
         </div>    
-        <nav>
+        <!-- <nav>
             <ul>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="aboutus.php">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-        </nav>
+        </nav> -->
             
 <form action="register_function.php" method="POST">
     <div class="container">
